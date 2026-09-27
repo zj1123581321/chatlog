@@ -9,7 +9,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 RUN groupadd -r -g 1001 chatlog && \
-    useradd -r -u 1001 -g chatlog -m -d /home/chatlog chatlog && \
+    useradd -r -u 1001 -g chatlog -m chatlog && \
     mkdir -p /app/data /app/work && \
     chown -R chatlog:chatlog /app
 
