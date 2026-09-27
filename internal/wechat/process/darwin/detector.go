@@ -119,7 +119,7 @@ func (d *Detector) initializeProcessInfo(p *process.Process, info *model.Process
 			// v3:
 			// ~/Library/Containers/com.tencent.xinWeChat/Data/Library/Application Support/com.tencent.xinWeChat/2.0b4.0.9/<id>/Message/msg_0.db
 			// v4:
-			// ~/Library/Containers/com.tencent.xinWeChat/Data/Documents/xwechat_files/<id>/db_storage/message/message_0.db
+			// ~/Library/Containers/com.tencent.xWeChat/Data/Documents/xwechat_files/<id>/db_storage/message/message_0.db
 
 			info.Status = model.StatusOnline
 			if info.Version == 4 {
