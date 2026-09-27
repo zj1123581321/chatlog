@@ -1,9 +1,27 @@
 @echo off
-setlocal enabledelayedexpansion
+setlocal
 
 echo ===========================================
 echo   Chatlog 服务器启动脚本
 echo ===========================================
+
+:: Required launch configuration; these values have no defaults.
+if not defined CHATLOG_SERVER_ADDR (
+    echo ❌ Missing CHATLOG_SERVER_ADDR. Set it to the server address and port.
+    exit /b 1
+)
+if not defined CHATLOG_DATA_DIR (
+    echo ❌ Missing CHATLOG_DATA_DIR. Set it to the WeChat data directory.
+    exit /b 1
+)
+if not defined CHATLOG_WORK_DIR (
+    echo ❌ Missing CHATLOG_WORK_DIR. Set it to the working directory.
+    exit /b 1
+)
+if not defined CHATLOG_DATA_KEY (
+    echo ❌ Missing CHATLOG_DATA_KEY. Set it before launching.
+    exit /b 1
+)
 
 :: 检查是否存在已构建的可执行文件
 if exist "bin\chatlog.exe" (
@@ -12,7 +30,7 @@ if exist "bin\chatlog.exe" (
     echo.
     
     :: 使用已构建的可执行文件运行
-    bin\chatlog.exe server --addr "100.119.132.40:5030" --data-dir "D:\MyFolders\WindowsDocuments\WeChat Files\wxid_8erobdogc9u022" --work-dir "C:\Users\zlx\Documents\chatlog\wxid_8erobdogc9u022" --platform windows --version 3 --data-key "5e13299164a246de8fa36e25c6778ad08623dc9d3e46466999e4da3f8bbbfb5f" --auto-decrypt
+    bin\chatlog.exe server --addr "%CHATLOG_SERVER_ADDR%" --data-dir "%CHATLOG_DATA_DIR%" --work-dir "%CHATLOG_WORK_DIR%" --platform windows --version 3 --data-key "%CHATLOG_DATA_KEY%" --auto-decrypt
     
 ) else if exist "chatlog.exe" (
     echo ✅ 找到 chatlog.exe
@@ -20,7 +38,7 @@ if exist "bin\chatlog.exe" (
     echo.
     
     :: 使用根目录的可执行文件运行
-    chatlog.exe server --addr "100.119.132.40:5030" --data-dir "D:\MyFolders\WindowsDocuments\WeChat Files\wxid_8erobdogc9u022" --work-dir "C:\Users\zlx\Documents\chatlog\wxid_8erobdogc9u022" --platform windows --version 3 --data-key "5e13299164a246de8fa36e25c6778ad08623dc9d3e46466999e4da3f8bbbfb5f" --auto-decrypt
+    chatlog.exe server --addr "%CHATLOG_SERVER_ADDR%" --data-dir "%CHATLOG_DATA_DIR%" --work-dir "%CHATLOG_WORK_DIR%" --platform windows --version 3 --data-key "%CHATLOG_DATA_KEY%" --auto-decrypt
     
 ) else (
     echo ❌ 找不到 chatlog.exe

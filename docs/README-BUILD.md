@@ -56,7 +56,7 @@ Binary was compiled with 'CGO_ENABLED=0', go-sqlite3 requires cgo to work. This 
 
 3. **运行服务器**
    ```cmd
-   chatlog.exe server --addr "100.119.132.40:5030" --data-dir "D:\MyFolders\WindowsDocuments\WeChat Files\wxid_8erobdogc9u022" --work-dir "C:\Users\zlx\Documents\chatlog\wxid_8erobdogc9u022" --platform windows --version 3 --data-key "5e13299164a246de8fa36e25c6778ad08623dc9d3e46466999e4da3f8bbbfb5f" --auto-decrypt
+   chatlog.exe server --addr "<host>:5030" --data-dir "<wechat-data-dir>" --work-dir "<work-dir>" --platform windows --version 3 --data-key "<your-data-key>" --auto-decrypt
    ```
 
 ### Linux/macOS 用户
@@ -160,12 +160,12 @@ CGO_ENABLED=1 go run main.go server [参数...]
 
 ```bash
 chatlog server \
-  --addr "100.119.132.40:5030" \
-  --data-dir "D:\MyFolders\WindowsDocuments\WeChat Files\wxid_8erobdogc9u022" \
-  --work-dir "C:\Users\zlx\Documents\chatlog\wxid_8erobdogc9u022" \
+  --addr "<host>:5030" \
+  --data-dir "<wechat-data-dir>" \
+  --work-dir "<work-dir>" \
   --platform windows \
   --version 3 \
-  --data-key "5e13299164a246de8fa36e25c6778ad08623dc9d3e46466999e4da3f8bbbfb5f" \
+  --data-key "<your-data-key>" \
   --auto-decrypt
 ```
 

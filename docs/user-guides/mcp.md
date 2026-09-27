@@ -27,7 +27,7 @@ uv tool install mcp-proxy
 
 # 查询 mcp-proxy 的路径，后续可直接使用该路径
 which mcp-proxy
-/Users/sarv/.local/bin/mcp-proxy
+/path/to/mcp-proxy
 ```
 
 ## ChatWise
@@ -85,7 +85,7 @@ which mcp-proxy
 {
   "mcpServers": {
     "chatlog": {
-      "command": "/Users/sarv/.local/bin/mcp-proxy",
+      "command": "/path/to/mcp-proxy",
       "args": [
         "http://localhost:5030/sse"
       ]
@@ -126,7 +126,7 @@ which mcp-proxy
         "properties": {
           "transport": {
             "type": "stdio",
-            "command": "/Users/sarv/.local/bin/mcp-proxy",
+            "command": "/path/to/mcp-proxy",
             "args": [
               "http://localhost:5030/sse"
             ]

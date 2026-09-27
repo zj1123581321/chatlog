@@ -162,7 +162,7 @@ chatlog server --debug
 
 **Windows:**
 ```cmd
-test_voice_logs.bat "C:\Users\Username\Documents\WeChat Files\wxid_xxx" "语音消息key"
+test_voice_logs.bat "%USERPROFILE%\Documents\WeChat Files\wxid_example" "语音消息key"
 ```
 
 #### 调试日志层级
