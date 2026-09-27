@@ -117,7 +117,7 @@ if errorlevel 1 (
 echo.
 echo 🚀 构建完成! 你现在可以使用以下命令启动服务器:
 echo.
-echo bin\chatlog.exe server --addr "100.119.132.40:5030" --data-dir "D:\MyFolders\WindowsDocuments\WeChat Files\wxid_8erobdogc9u022" --work-dir "C:\Users\zlx\Documents\chatlog\wxid_8erobdogc9u022" --platform windows --version 3 --data-key "5e13299164a246de8fa36e25c6778ad08623dc9d3e46466999e4da3f8bbbfb5f" --auto-decrypt
+echo bin\chatlog.exe server --addr "<host>:5030" --data-dir "%USERPROFILE%\Documents\WeChat Files\wxid_example" --work-dir "%USERPROFILE%\chatlog-work" --platform windows --version 3 --data-key "5e13299164a246de8fa36e25c6778ad08623dc9d3e46466999e4da3f8bbbfb5f" --auto-decrypt
 echo.
 
 pause
