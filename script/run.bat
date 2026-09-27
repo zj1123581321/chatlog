@@ -28,6 +28,10 @@ if not defined CHATLOG_WORK_DIR (
     echo ❌ Missing CHATLOG_WORK_DIR. Set it to the working directory.
     exit /b 1
 )
+if not defined CHATLOG_DATA_KEY (
+    echo ❌ Missing CHATLOG_DATA_KEY. Set it before launching.
+    exit /b 1
+)
 
 :: 检查 Go 和编译器
 where go >nul 2>&1
@@ -50,7 +54,7 @@ echo 🚀 启动 Chatlog 服务器...
 echo    注意: 首次运行可能需要较长时间进行编译
 
 :: 运行服务器
-go run main.go server --addr "%CHATLOG_SERVER_ADDR%" --data-dir "%CHATLOG_DATA_DIR%" --work-dir "%CHATLOG_WORK_DIR%" --platform windows --version 3 --data-key "5e13299164a246de8fa36e25c6778ad08623dc9d3e46466999e4da3f8bbbfb5f" --auto-decrypt
+go run main.go server --addr "%CHATLOG_SERVER_ADDR%" --data-dir "%CHATLOG_DATA_DIR%" --work-dir "%CHATLOG_WORK_DIR%" --platform windows --version 3 --data-key "%CHATLOG_DATA_KEY%" --auto-decrypt
 
 if errorlevel 1 (
     echo.

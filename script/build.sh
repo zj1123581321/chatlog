@@ -1,4 +1,5 @@
 #!/bin/bash
+: "${CHATLOG_DATA_KEY:?CHATLOG_DATA_KEY must be set}"
 
 echo "==========================================="
 echo "  Chatlog Linux/macOS 构建脚本"
@@ -97,7 +98,7 @@ if go build -ldflags "-s -w" -o bin/chatlog main.go; then
     echo '  --data-dir "$HOME/WeChatData" \'
     echo '  --work-dir "$HOME/chatlog-work" \'
     echo '  --platform windows --version 3 \'
-    echo '  --data-key "5e13299164a246de8fa36e25c6778ad08623dc9d3e46466999e4da3f8bbbfb5f" \'
+    echo '  --data-key "${CHATLOG_DATA_KEY:?CHATLOG_DATA_KEY must be set}" \'
     echo '  --auto-decrypt'
     echo ""
     
