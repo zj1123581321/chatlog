@@ -1,5 +1,9 @@
 @echo off
-setlocal enabledelayedexpansion
+setlocal
+if not defined USERPROFILE (
+    echo ❌ Missing USERPROFILE. Cannot build the Windows launch example.
+    exit /b 1
+)
 
 echo ===========================================
 echo   Chatlog Windows 构建脚本
